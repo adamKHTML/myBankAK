@@ -24,7 +24,7 @@ Ce projet est une application web utilisant React pour le frontend et Symfony po
 
 3. Démarrez le serveur de développement :
     ```sh
-    npm run dev
+  docker run -p 3000:80 client
     ```
 
 Le frontend sera accessible à l'adresse `http://localhost:3000`.
@@ -67,9 +67,7 @@ Le backend est une application Symfony. Vous pouvez accéder à l'interface de l
 
 ### Frontend
 
-- `npm run dev` : Démarre le serveur de développement.
-- `npm run build` : Compile l'application pour la production.
-- `npm run lint` : Lint le code source.
+- `docker run -p 3000:80 client` : Démarre le serveur de développement.
 
 ### Backend
 
