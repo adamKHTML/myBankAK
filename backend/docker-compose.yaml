@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: symfony_app
+    volumes:
+      - .:/var/www
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: "mysql://root:root@127.0.0.1:3306/myBank?charset=utf8mb4"
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: myBank                
+      MYSQL_PASSWORD: root  
+    ports:
+      - "3307:3306"
