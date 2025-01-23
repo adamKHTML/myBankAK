@@ -24,7 +24,7 @@ Ce projet est une application web utilisant React pour le frontend et Symfony po
 
 3. Démarrez le serveur de développement :
     ```sh
-  docker run -p 3000:80 client
+    docker run -p 3000:80 client
     ```
 
 Le frontend sera accessible à l'adresse `http://localhost:3000`.
