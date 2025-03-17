@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   backend:
     build:
@@ -8,9 +9,9 @@ services:
     volumes:
       - .:/var/www
     ports:
-      - "8000:8000"
+      - "8084:80"  
     environment:
-      DATABASE_URL: "mysql://root:root@127.0.0.1:3306/myBank?charset=utf8mb4"
+      DATABASE_URL: "mysql://root:root@database:3306/myBank?charset=utf8mb4"
     depends_on:
       - database
 
@@ -22,4 +23,9 @@ services:
       MYSQL_DATABASE: myBank                
       MYSQL_PASSWORD: root  
     ports:
-      - "3307:3306"
+      - "3308:3306" 
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
